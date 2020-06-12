@@ -29,6 +29,13 @@ macro_rules! koan {
     );
 }
 
+macro_rules! euler {
+    ($name:expr) => (
+        include!(concat!("euler/", $name, ".rs"));
+    );
+}
+
+
 #[cfg(not(test))]
 fn seek_the_path() -> bool {
     let mut koans = BufReader::new(File::open("src/koans.txt").unwrap()).lines();
